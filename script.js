@@ -907,7 +907,7 @@ function initTerminal() {
     "$ cat /srv/work",
     "$ cat /srv/project",
     "$ cat /skills/stack",
-    "$ hire --seulki",
+    "$ hire",
     "$ help",
   ]);
 }
