@@ -125,7 +125,7 @@ const entries = {
   "/srv/work": {
     meta: "srv/work",
     timelineTitle: "Work",
-    timelineSubtitle: "회사 기준 주요 업무 타임라인",
+    timelineSubtitle: "주요 업무 타임라인",
     timeline: [
       {
         period: "2023.03 - 현재",
