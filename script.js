@@ -81,7 +81,7 @@ const entries = {
     timeline: [
       {
         period: "2023.03 - 현재",
-        company: "아톤",
+        company: "(주) 아톤",
         projects: [
           {
             period: "2025.12",
