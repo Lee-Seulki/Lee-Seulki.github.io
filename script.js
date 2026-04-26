@@ -34,6 +34,7 @@ const TECH_BADGE_META = {
   "Vue.js": { logo: "vuedotjs", logoColor: "white" },
   React: { logo: "react", logoColor: "61DAFB" },
   MyBatis: { logoColor: "white" },
+  QueryDSL: { logoColor: "white" },
 };
 const LEVEL_COLOR_MAP = {
   고급: "22C55E",
@@ -83,18 +84,19 @@ const entries = {
         company: "아톤",
         projects: [
           {
-            period: "2025.12 - 2026.03",
+            period: "2025.12",
             title: "LGU+ PASS앱 이통사 신원확인시스템(MIS) 오픈",
             points: [
-              "휴대폰 개통 시 신분증 확인과 안면인증을 통해 본인 여부를 정확히 확인하는 서비스를 LG U+ PASS앱을 통해 인증할 수 있도록 함",
+              "휴대폰 개통 시 신분증 확인과 안면인증을 통해 본인 여부를 정확히 확인하는 서비스",
+              "LGU+ PASS앱을 통한 안면인증 서비스가 가능하도록 개발함"
             ],
             skills: ["Java", "Spring Boot", "JPA"],
           },
           {
-            period: "2025.06 - 2025.06",
+            period: "2025.06",
             title: "LGU+ PASS앱 신분증 결제 서비스 오픈",
             points: [
-              "성인인증과 결제를 동시에 진행할 수 있는 신분증 결제 서비스 오픈 성공",
+              "신분증 확인과 결제를 동시에 진행할 수 있는 PASS 신분증 결제 서비스 오픈",
             ],
             skills: ["Java", "Spring Boot", "JPA"],
           },
@@ -130,22 +132,45 @@ const entries = {
         company: "(주) 아톤",
         projects: [
           {
-            period: "2023.03 ~",
-            title: "LGU+ PASS앱 모바일 신분증 서비스",
-            points: ["서버 개발/운영 및 기능 개선"],
-            skills: [],
-          },
-          {
-            period: "2024.01 ~",
+            period: "2026.01 ~",
             title: "LGU+ PASS앱 부가서비스",
-            points: ["서버 개발/운영 및 기능 개선"],
-            skills: [],
+            points: ["PASS앱 내 제공되는 부가서비스의 서버 개발과 안정적인 운영 담당",
+                     "신규 부가서비스 도입에 따른 CP사 API 연동 및 전문 개발",
+                     "부가서비스 및 모바일 신분증 서비스 백오피스 개발",
+                    ],
+            skills: [
+              "Java",
+              "Spring Boot",
+              "Spring Framework",
+              "JPA",
+              "Vue.js",
+              "QueryDSL",
+            ],
           },
           {
             period: "2024.03 ~ 2025.12",
-            title: "LGU+ PASS앱 이벤트 페이지 개발",
-            points: ["이벤트 서버 개발 및 운영"],
-            skills: [],
+            title: "LGU+ PASS앱 이벤트 페이지 개발 및 운영",
+            points: [
+              "PASS앱 내 전략파트너사 전용 이벤트 페이지 및 프로모션 백엔드 개발",
+            ],
+            skills: ["Java", "Spring Boot", "MyBatis", "Vue.js"],
+          },
+          {
+            period: "2023.06 ~ 2025.12",
+            title: "LGU+ PASS앱 모바일 신분증 서비스",
+            points: ["PASS앱 내 제공되는 모바일신분증서비스(운전면허증, 주민등록증)의 서버 개발과 안정적인 운영 담당",
+                     "대행사와 진행하는 대면/비대면 성인인증/신원인증 프로세스 개발 및 운영",
+                     "LGU+ PASS앱 신분증 결제 서비스, 스마트 티켓 서비스 개발 및 운영"
+                    ],
+            skills: ["Java", "Spring Boot", "Spring Framework", "JPA"],
+          },
+          {
+            period: "2023.03 ~ 2023.05",
+            title: "(주) 아톤 인턴",
+            points: [
+              "Java 프로그래밍 기초 역량을 실무 API 개발에 적용하며 백엔드 개발자로서의 기반 마련",
+            ],
+            skills: ["Java"],
           },
         ],
       },
@@ -154,7 +179,7 @@ const entries = {
   "/usr/edu": {
     meta: "usr/edu",
     timelineTitle: "Education",
-    timelineSubtitle: "학력 및 교육 이수사항 (최신순)",
+    timelineSubtitle: "학력 및 교육 이수사항",
     timeline: [
       {
         period: "2022.08 - 2023.01",
@@ -164,18 +189,21 @@ const entries = {
             period: "2022.08 - 2023.01",
             title: "서울산업진흥원 교육 이수",
             points: ["금융데이터 분석 실무 프로젝트 수행"],
-            skills: [],
+            skills: ["Python"],
           },
         ],
       },
       {
         period: "2017.03 - 2022.02",
-        company: "세종대학교",
+        company: "세종대학교 학사",
         projects: [
           {
             period: "2017.03 - 2022.02",
             title: "공학사(전자정보통신공학심화)",
-            points: [],
+            points: [
+              "전자정보통신공학 전공으로 정보통신 인프라 및 네트워크 기반 지식 습득",
+              "Java 및 Python 프로그래밍 언어 수업을 들으며 소프트웨어 역량을 확보",
+            ],
             skills: [],
           },
         ],
@@ -207,6 +235,7 @@ const entries = {
           { name: "Spring Framework", level: "고급" },
           { name: "JPA", level: "고급" },
           { name: "MyBatis", level: "중급" },
+          { name: "QueryDSL", level: "중급" },
           { name: "Vue.js", level: "초급" },
           { name: "React", level: "초급" },
           { name: "Next.js", level: "초급" },
@@ -543,6 +572,11 @@ function appendCertificationTable(entry) {
   title.className = "cert-title";
   title.textContent = "Certification";
   section.appendChild(title);
+
+  const subtitle = document.createElement("p");
+  subtitle.className = "career-subtitle";
+  subtitle.textContent = "자격증 및 어학";
+  section.appendChild(subtitle);
 
   (entry.certs || []).forEach((cert) => {
     const row = document.createElement("article");
