@@ -70,7 +70,7 @@ const entries = {
       alias: "Lee Seulki",
       roleLine: "$ whoami -> Backend Developer",
       summary:
-        "안정적인 서버 운영과 구조적인 문제 해결에 집중합니다. Java/Spring 기반 서버 개발과 운영을 중심으로 인증, 모바일 신분증, DBMS 이관 과정을 실무에서 수행했습니다.",
+        "백엔드 개발자 이슬기입니다. 문제 해결과 효율적인 코드 구현에 집중합니다. 대규모 트래픽 환경에서도 안정적인 트랜잭션 처리와 데이터 관리를 수행한 경험이 있으며 기술적 히스토리를 자산화 하는 데 강점이 있습니다.",
       meta: ["📍 Seoul, Korea", `💼 ${CAREER_TOKEN}`],
     },
   },
@@ -400,6 +400,15 @@ function appendBlock(title, items) {
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
+function appendAsciiBox(lines, width = 60) {
+  const border = `+${"-".repeat(width - 2)}+`;
+  const paddedLines = lines.map((line) => {
+    const text = String(line).slice(0, width - 4);
+    return `| ${text.padEnd(width - 4, " ")} |`;
+  });
+  appendLines([border, ...paddedLines, border], "muted");
+}
+
 function appendAboutCard(entry) {
   const card = document.createElement("article");
   card.className = "about-card";
@@ -724,7 +733,7 @@ function printHelp() {
       "skills",
       "whoami",
       "neofetch",
-      "sudo hire --seulki",
+      "hire",
       "clear",
     ],
     "muted"
@@ -757,8 +766,6 @@ function printNeofetch() {
       "role        : backend developer",
       `career      : ${getCareerDurationText()}`,
       "main stack  : Java / Spring Boot / RDBMS / Linux",
-      "experience  : srv/work + srv/project",
-      "status      : production stable",
     ],
     "muted"
   );
@@ -812,16 +819,34 @@ function executeCommand(rawCommand) {
     return;
   }
 
-  if (command === "sudo hire --seulki") {
+  if (command === "hire --seulki") {
     appendLines(
       [
-        "[sudo] password for recruiter: ********",
-        "permission granted.",
-        "Hiring process accelerated successfully.",
+        "deploying offer pipeline...",
+        "      *    .  *       .             *",
+        "   .     *      BOOM!      *    .",
+        "      \\  |  /       \\  |  /",
+        "    ---  *  ---   ---  *  ---",
+        "      /  |  \\       /  |  \\",
+        "hire-event: confetti shipped for Lee Seulki ʕ⸝⸝•ﻌ•⸝⸝ʔ♡",
       ],
       "muted"
     );
-    printEntry(entries["/usr/about"]);
+    return;
+  }// 2. hire 명령어만 입력했을 때 (리눅스 표준 가이드 스타일)
+  else if (command === "hire") {
+    appendLines(
+      [
+        "Usage: hire [options]",
+        "",
+        "Options:",
+        "  --seulki    recruit the best backend developer",
+        "",
+        "Example:",
+        "  hire --seulki"
+      ],
+      "error" // 에러나 경고 색상이 있다면 지정 (없으면 "muted")
+    );
     return;
   }
 
@@ -875,48 +900,45 @@ async function simulateCommand(command) {
 
 function initTerminal() {
   printEntry(entries["/usr/about"]);
-  appendLines(
-    [
-      "How to use:",
-      "$ cat /usr/about",
-      "$ cat /usr/edu",
-      "$ cat /srv/work",
-      "$ cat /srv/project",
-      "$ cat /skills/stack",
-      "$ cat /skills/certification",
-      "$ cd /usr && ls",
-      "$ help",
-    ],
-    "muted"
-  );
+  appendAsciiBox([
+    "How to use (๑ᵔ⩊ᵔ๑)",
+    "Type a command, or click the left file tree menu.",
+    "$ cat /usr/about",
+    "$ cat /srv/work",
+    "$ cat /srv/project",
+    "$ cat /skills/stack",
+    "$ hire --seulki",
+    "$ help",
+  ]);
 }
 
 async function playBootSequence() {
   const bootStart = performance.now();
   const baseDate = new Date();
   const ascii = [
-    "  _                    ____             _ _    _",
-    " | |    ___  ___     / ___|  ___ _   _| | | _(_)",
-    " | |   / _ \\/ _ \\    \\___ \\ / _ \\ | | | | |/ / |",
-    " | |__|  __/  __/     ___) |  __/ |_| | |   <| |",
-    " |_____\\___|\\___|    |____/ \\___|\\__,_|_|_|\\_\\_|",
+    "Lee Seulki",
+    "Backend Developer",
+    "portfolio boot ₒ₍₊˒₃˓₎ₒ▁▂▃▅▆▓▒░✩⃛",
   ];
-  appendLine(":: Lee Seulki Portfolio Runtime :: Booting", "muted");
-  for (const line of ascii) {
-    appendLine(line, "muted");
-    await new Promise((resolve) => window.setTimeout(resolve, 90));
-  }
+  appendLine(":: Lee Seulki Portfolio :: waking up", "muted");
+  appendAsciiBox(ascii, 70);
+  await new Promise((resolve) => window.setTimeout(resolve, 270));
 
   const steps = [
     {
       delay: 0,
-      logger: "c.l.portfolio.Runtime",
-      message: "Starting LeeSeulkiApplication using Java 17.0.12 with PID 9712",
+      logger: "portfolio.runtime",
+      message: "mounting /usr/about profile card",
     },
     {
-      delay: 860,
-      logger: "c.l.portfolio.HttpServer",
-      message: "Tomcat initialized with port 1227 (http)",
+      delay: 480,
+      logger: "portfolio.timeline",
+      message: "loading /srv/work and /srv/project timeline",
+    },
+    {
+      delay: 920,
+      logger: "portfolio.skills",
+      message: "warming badge cache for /skills/stack",
     },
   ];
 
@@ -924,15 +946,15 @@ async function playBootSequence() {
     const timestamp = formatSeoulTimestamp(
       new Date(baseDate.getTime() + step.delay)
     );
-    const line = `${timestamp}  INFO 9712 --- [           main] ${step.logger.padEnd(43, " ")} : ${step.message}`;
+    const line = `${timestamp}  OK   1227 --- [portfolio] ${step.logger.padEnd(20, " ")} : ${step.message}`;
     appendLine(line, "muted");
-    await new Promise((resolve) => window.setTimeout(resolve, 420));
+    await new Promise((resolve) => window.setTimeout(resolve, 520));
   }
 
   const bootSeconds = ((performance.now() - bootStart) / 1000).toFixed(2);
   const finalTimestamp = formatSeoulTimestamp(new Date());
   appendLine(
-    `${finalTimestamp}  INFO 9712 --- [           main] c.l.portfolio.Runtime                    : Started LeeSeulkiApplication in ${bootSeconds} seconds (JVM running for ${bootSeconds} seconds)`,
+    `${finalTimestamp}  DONE 1227 --- [portfolio] portfolio.ready       : Lee Seulki is ready in ${bootSeconds}s  / resume/1227  <3`,
     "muted"
   );
   appendLine("", "muted");
