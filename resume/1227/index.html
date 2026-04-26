@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이슬기 | Backend Developer</title>
+    <meta name="description" content="이슬기 | Backend Developer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../styles.css?v=20260426-39" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar terminal-panel">
+        <div class="identity-block">
+          <h1>Lee Seulki</h1>
+          <p class="role">Backend Developer</p>
+        </div>
+
+        <nav class="file-tree" aria-label="포트폴리오 파일 트리">
+          <div class="tree-group">
+            <button class="tree-dir" type="button" data-command="cd /usr">usr/</button>
+            <button class="tree-leaf" type="button" data-command="cat /usr/about">
+              <span>├──</span> about
+            </button>
+            <button class="tree-leaf" type="button" data-command="cat /usr/edu">
+              <span>├──</span> edu
+            </button>
+            <button class="tree-leaf" type="button" data-command="cat /usr/contact">
+              <span>└──</span> contact
+            </button>
+          </div>
+
+          <div class="tree-group">
+            <button class="tree-dir" type="button" data-command="cd /srv">srv/</button>
+            <button class="tree-leaf" type="button" data-command="cat /srv/work">
+              <span>├──</span> work
+            </button>
+            <button class="tree-leaf" type="button" data-command="cat /srv/project">
+              <span>└──</span> project
+            </button>
+          </div>
+
+          <div class="tree-group">
+            <button class="tree-dir" type="button" data-command="cd /skills">skills/</button>
+            <button class="tree-leaf" type="button" data-command="cat /skills/stack">
+              <span>├──</span> stack
+            </button>
+            <button class="tree-leaf" type="button" data-command="cat /skills/certification">
+              <span>└──</span> certification
+            </button>
+          </div>
+        </nav>
+      </aside>
+
+      <main class="workspace">
+        <section class="shell-panel terminal-panel">
+          <div class="panel-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <p id="current-path">seulki@portfolio-node:/usr</p>
+          </div>
+
+          <div class="shell-layout">
+            <div class="terminal-console">
+              <div id="terminal-output" class="terminal-output" aria-live="polite"></div>
+
+              <form id="terminal-form" class="terminal-form">
+                <label class="terminal-prompt" for="terminal-input">
+                  seulki@github-io:<span id="prompt-path">/usr</span>$
+                </label>
+                <input
+                  id="terminal-input"
+                  class="terminal-input"
+                  name="command"
+                  type="text"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  placeholder="명령어를 입력하세요"
+                />
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../../script.js?v=20260426-39"></script>
+  </body>
+</html>
