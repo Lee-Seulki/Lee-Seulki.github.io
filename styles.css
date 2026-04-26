@@ -380,10 +380,10 @@ body::before {
   display: grid;
   grid-template-columns: 112px minmax(0, 1fr);
   gap: 18px;
-  padding: 20px;
-  border: 1px solid #2b2f38;
-  border-radius: 18px;
-  background: linear-gradient(180deg, #171d2b 0%, #131827 100%);
+  padding: 16px 0;
+  border-top: 1px solid #3d4352;
+  border-bottom: 1px solid #3d4352;
+  background: transparent;
 }
 
 .about-avatar {

@@ -185,7 +185,7 @@ const entries = {
   "/usr/contact": {
     meta: "usr/contact",
     lines: [
-      "📧 seulki971227@kakao.com",
+      "💌 seulki971227@kakao.com",
       "📱 +82 10-4845-9264",
     ],
   },
@@ -541,7 +541,7 @@ function appendCertificationTable(entry) {
 
   const title = document.createElement("h3");
   title.className = "cert-title";
-  title.textContent = "자격증 및 어학";
+  title.textContent = "Certification";
   section.appendChild(title);
 
   (entry.certs || []).forEach((cert) => {
@@ -590,8 +590,8 @@ function printEntry(entry) {
 
   if (entry.meta === "usr/contact" && entry.lines?.length) {
     appendLine(`# ${entry.meta}`, "muted");
-    entry.lines.forEach((line, index) => {
-      appendLine(applyCareerToken(line), index === 0 ? "" : "muted");
+    entry.lines.forEach((line) => {
+      appendLine(applyCareerToken(line));
     });
     treeButtons.forEach((button) => {
       button.classList.toggle(
